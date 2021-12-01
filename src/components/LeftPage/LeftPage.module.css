@@ -1,0 +1,36 @@
+.frame {
+  position: absolute;
+  /* display: flex;
+  flex-wrap: wrap; */
+  height: 100%;
+  width: 50%;
+  background-color: black;
+  color: white;
+  text-align: left;
+}
+
+.content {
+  margin-left: 20px;
+}
+
+.location {
+  width: 100%;
+  cursor: pointer;
+}
+
+.locationContent {
+  font-size: 30vh;
+  color: orange;
+}
+.location:hover {
+  color: skyblue;
+}
+
+.temp {
+  font-size: 10vw;
+  color: rgb(44, 118, 255);
+}
+
+.weather {
+  font-size: 12vw;
+}
