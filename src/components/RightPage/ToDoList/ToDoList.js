@@ -5,12 +5,11 @@ import styles from './ToDoList.module.css';
 const ToDolist = () => {
   const [toDos, setToDos] = useState([
     { id: 1, title: '포트폴리오 끝내기', done: false },
-    { id: 2, title: '경영학개론 공부', done: false },
+    { id: 2, title: '경영학개론 공부', done: true },
     { id: 3, title: '헬스장', done: false },
     { id: 4, title: '둥이 목욕', done: false },
     // { id: 5, title: '닭가슴살 구입', done: false },
   ]);
-  const [isClicked, setIsClicked] = useState(false);
 
   const inputRef = useRef();
 
@@ -29,29 +28,41 @@ const ToDolist = () => {
   };
 
   const deleteToDo = (todo) => {
-    const toDosArray = [...toDos];
     const index = toDos.indexOf(todo);
-    setToDos(toDosArray.splice(index, 1));
+    console.log(index);
+    setToDos(
+      toDos.filter((toDo) => {
+        return toDo !== todo;
+      })
+    );
   };
 
-  const doneToDo = (e) => {
-    console.log(e);
-    setIsClicked(true);
+  const doneToDo = (todo) => {
+    const index = toDos.indexOf(todo);
+    const newToDos = [...toDos];
+    if (newToDos[index].done === false) {
+      newToDos[index].done = true;
+    } else {
+      newToDos[index].done = false;
+    }
+    console.log(newToDos[index].done);
+    setToDos(newToDos);
   };
 
   return (
     <div className={styles.frame}>
-      {toDos.map((todo) => (
-        <ToDo
-          key={todo.id}
-          title={todo.title}
-          todo={todo}
-          done={todo.done}
-          doneToDo={doneToDo}
-          deleteToDo={deleteToDo}
-          isClicked={isClicked}
-        />
-      ))}
+      <ul>
+        {toDos.map((todo) => (
+          <ToDo
+            key={todo.id}
+            todo={todo}
+            title={todo.title}
+            done={todo.done}
+            deleteToDo={deleteToDo}
+            doneToDo={doneToDo}
+          />
+        ))}
+      </ul>
       <form onSubmit={addToDo}>
         <input type='text' ref={inputRef} />
         <button>등록</button>
