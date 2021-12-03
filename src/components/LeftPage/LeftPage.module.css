@@ -1,27 +1,83 @@
-.frame {
-  position: absolute;
-  /* display: flex;
-  flex-wrap: wrap; */
-  height: 100%;
-  width: 50%;
-  background-color: black;
+.Container {
+  display: flex;
+  align-items: center;
   color: white;
+  height: 100%;
+  width: 100%;
   text-align: left;
 }
 
-.content {
-  margin-left: 20px;
+.Container:hover .weatherFrame {
+  transform: rotateY(180deg);
 }
 
-.location {
+.weatherFrame {
+  display: flex;
+  height: 100%;
   width: 100%;
+  transition: 2s;
+  transform-style: preserve-3d;
+}
+
+.weatherContent,
+.weatherEdit {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  backface-visibility: hidden;
+}
+
+.weatherContent {
+  background-color: black;
+}
+
+.weatherEdit {
+  background-color: rgb(175, 175, 175);
+  color: black;
+  transform: rotateY(180deg);
+}
+
+.weatherEditContent {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+}
+.weatherEditContent > input {
+  width: 60vw;
+  height: 20vw;
+  font-size: 18vw;
+}
+
+.weatherCon {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  margin-left: 1vh;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.location,
+.weather {
+  top: 50px;
   cursor: pointer;
 }
 
 .locationContent {
-  font-size: 30vh;
+  font-size: 24vw;
+  line-height: 24vw;
   color: orange;
 }
+
+.locationLongContent {
+  font-size: 15vw;
+  line-height: 15vw;
+  color: orange;
+}
+
 .location:hover {
   color: skyblue;
 }
@@ -33,4 +89,19 @@
 
 .weather {
   font-size: 12vw;
+}
+
+@media (max-width: 1023px) {
+  .Container {
+    perspective: 800px;
+    /* display: flex;
+    flex-wrap: wrap; */
+    height: 50%;
+    width: 100%;
+    color: white;
+    text-align: left;
+  }
+  .weather {
+    font-size: 10vw;
+  }
 }

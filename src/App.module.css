@@ -1,0 +1,11 @@
+.frame {
+  display: flex;
+  height: 100vh;
+}
+
+@media (max-width: 1023px) {
+  .frame {
+    display: flex;
+    flex-direction: column;
+  }
+}

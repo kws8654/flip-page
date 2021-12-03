@@ -1,0 +1,17 @@
+.todoFrame {
+  display: flex;
+  justify-content: right;
+}
+
+.title {
+  font-size: 4vh;
+}
+
+.delButton {
+}
+
+@media (max-width: 1023px) {
+  .title {
+    font-size: 3vh;
+  }
+}

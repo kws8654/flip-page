@@ -4,7 +4,7 @@ import RightPage from './components/RightPage/RightPage';
 
 function App() {
   return (
-    <div>
+    <div className={styles.frame}>
       <LeftPage />
       <RightPage />
     </div>

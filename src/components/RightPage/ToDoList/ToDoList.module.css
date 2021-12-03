@@ -1,0 +1,7 @@
+.frame {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-content: right;
+  margin-right: 1vh;
+}

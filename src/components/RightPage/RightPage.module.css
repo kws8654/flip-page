@@ -1,6 +1,37 @@
 .frame {
-  position: absolute;
-  right: 0;
-  height: 100%;
-  width: 50%;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background-color: white;
+  text-align: right;
+}
+
+.title {
+  font-size: 9vw;
+  font-weight: bold;
+  margin-bottom: 30px;
+  margin-right: 1vh;
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.titleHover:hover {
+  /* transform: translateY(-10px); */
+  transform: scale(1.05);
+}
+
+@media (max-width: 1023px) {
+  .frame {
+    perspective: 800px;
+    height: 50%;
+    width: 100%;
+  }
+  .title {
+    font-size: 12vw;
+    font-weight: bold;
+    margin-bottom: 30px;
+    margin-right: 1vh;
+    text-decoration: underline;
+  }
 }

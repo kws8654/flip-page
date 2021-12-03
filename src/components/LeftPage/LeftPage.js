@@ -9,9 +9,10 @@ const API = {
 const LeftPage = () => {
   const [query, setQuery] = useState('');
   const [weather, setWeather] = useState({});
+  const [isClicked, setIsClicked] = useState(false);
 
   useEffect(() => {
-    fetch(`${API.base}weather?q=california&units=metric&APPID=${API.key}`)
+    fetch(`${API.base}weather?q=seoul&units=metric&APPID=${API.key}`)
       .then((res) => res.json())
       .then((data) => setWeather(data));
   }, []);
@@ -24,72 +25,59 @@ const LeftPage = () => {
       const result = await response.json();
       setWeather(result);
       setQuery('');
-      console.log(result);
+      alert(`${query}로 설정 완료!`);
     }
   };
-  const dateBuilder = (d) => {
-    let months = [
-      '1',
-      '2',
-      '3',
-      '4',
-      '5',
-      '6',
-      '7',
-      '8',
-      '9',
-      '10',
-      '11',
-      '12',
-    ];
-    let days = ['월', '화', '수', '목', '금', '토', '일'];
 
-    let year = d.getFullYear();
-    let month = months[d.getMonth()];
-    let date = d.getDate();
-    let day = days[d.getDay()];
-
-    return `${year}년 ${month}월 ${date}일 ${day}요일  `;
-  };
   return (
-    // <div
-    //   className={
-    //     typeof weather.main != 'undefined'
-    //       ? weather.main.temp < 16
-    //         ? 'app cold'
-    //         : 'app'
-    //       : 'app'
-    //   }
-    // >
-    <div className={styles.frame}>
-      {/* <div className='searchBox'>
-          <input
-            type='text'
-            className='searchBar'
-            placeholder='도시'
-            onChange={(e) => setQuery(e.target.value)}
-            value={query}
-            onKeyPress={search}
-          />
-        </div> */}
-      {typeof weather.main != 'undefined' ? (
-        <div className={styles.content}>
-          <div className={styles.location}>
-            <span className={styles.locationContent}>{weather.name},</span>
+    <div className={styles.Container}>
+      <div className={styles.weatherFrame}>
+        {typeof weather.main != 'undefined' ? (
+          <div className={styles.weatherContent}>
+            <div className={styles.weatherCon}>
+              <div className={styles.location}>
+                <span
+                  className={
+                    weather.name.length < 6
+                      ? styles.locationContent
+                      : styles.locationLongContent
+                  }
+                >
+                  {weather.name},
+                </span>
+              </div>
+              <div className={styles.weather}>
+                <span>{weather.sys.country} </span>
+                <span
+                  className={
+                    weather.main.temp > 16
+                      ? 'styles.warmTemp'
+                      : 'styles.coldTemp'
+                  }
+                >
+                  {Math.round(weather.main.temp)} ℃
+                </span>
+                <div className={styles.weather}>{weather.weather[0].main} </div>
+              </div>
+            </div>
           </div>
-          <div className={styles.temp}>
-            <span>{weather.sys.country} ,</span>
-            <span
-              className={weather.main.temp > 16 ? 'temp cold' : 'styles.temp'}
-            >
-              {Math.round(weather.main.temp)} ℃
-            </span>
+        ) : (
+          ''
+        )}
+        <div className={styles.weatherEdit}>
+          <div className={styles.weatherEditContent}>
+            Type the country you want to search
+            <input
+              type='text'
+              className='searchBar'
+              placeholder='City'
+              onChange={(e) => setQuery(e.target.value)}
+              value={query}
+              onKeyPress={search}
+            />
           </div>
-          <span className={styles.weather}>{weather.weather[0].main}</span>
         </div>
-      ) : (
-        ''
-      )}
+      </div>
     </div>
   );
 };
