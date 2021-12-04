@@ -1,17 +1,41 @@
 .todoFrame {
   display: flex;
   justify-content: right;
+  align-items: right;
+  align-content: right;
 }
 
 .title {
-  font-size: 4vh;
+  font-size: 3vh;
+  overflow: hidden;
 }
 
+.doneButton,
 .delButton {
+  background-color: transparent;
+  border: 0;
+  outline: 0;
+}
+.doneButton:hover,
+.delButton:hover {
+  transform: scale(1.1);
+}
+
+.doneButton > img {
+  width: 3vh;
+}
+.delButton > img {
+  width: 2.7vh;
 }
 
 @media (max-width: 1023px) {
   .title {
-    font-size: 3vh;
+    font-size: 2.5vh;
+  }
+  .doneButton > img {
+    width: 2.5vh;
+  }
+  .delButton > img {
+    width: 2.2vh;
   }
 }

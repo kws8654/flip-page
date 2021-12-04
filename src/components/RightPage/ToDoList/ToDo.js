@@ -2,7 +2,6 @@ import React from 'react';
 import styles from './ToDo.module.css';
 
 const ToDo = (props) => {
-  // const isClicked = props.isClicked;
   const handleDec = () => {
     props.deleteToDo(props.todo);
   };
@@ -18,11 +17,12 @@ const ToDo = (props) => {
       >
         {props.title}
       </div>
-      <button className={styles.delButton} onClick={handleDec}>
-        삭제
-      </button>
+
       <button className={styles.doneButton} onClick={handleDone}>
-        완료
+        <img src='./images/checked.png' alt='' />
+      </button>
+      <button className={styles.delButton} onClick={handleDec}>
+        <img src='./images/cross.png' alt='' />
       </button>
     </div>
   );

@@ -9,7 +9,9 @@ const RightPage = () => {
         <div className={styles.titleHover}>TO DO LIST </div>
         <Clock />
       </div>
-      <ToDoList />
+      <div>
+        <ToDoList />
+      </div>
     </div>
   );
 };

@@ -3,6 +3,7 @@ import styles from './Clock.module.css';
 
 const Clock = () => {
   const [time, setTime] = useState([]);
+
   useEffect(() => {
     const clock = () => {
       const time = new Date();

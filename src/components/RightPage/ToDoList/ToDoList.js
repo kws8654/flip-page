@@ -4,9 +4,9 @@ import styles from './ToDoList.module.css';
 
 const ToDolist = () => {
   const [toDos, setToDos] = useState([
-    { id: 1, title: '포트폴리오 끝내기', done: false },
-    { id: 2, title: '경영학개론 공부', done: true },
-    { id: 3, title: '헬스장', done: false },
+    { id: 1, title: '리액트 공부하기', done: false },
+    { id: 2, title: '"Wealthinking" 읽기', done: false },
+    { id: 3, title: '헬스장', done: true },
     { id: 4, title: '둥이 목욕', done: false },
     // { id: 5, title: '닭가슴살 구입', done: false },
   ]);
@@ -51,7 +51,7 @@ const ToDolist = () => {
 
   return (
     <div className={styles.frame}>
-      <ul>
+      <div>
         {toDos.map((todo) => (
           <ToDo
             key={todo.id}
@@ -62,10 +62,13 @@ const ToDolist = () => {
             doneToDo={doneToDo}
           />
         ))}
-      </ul>
+      </div>
       <form onSubmit={addToDo}>
-        <input type='text' ref={inputRef} />
-        <button>등록</button>
+        <input
+          type='text'
+          ref={inputRef}
+          placeholder='입력 후 엔터를 눌러주세요'
+        />
       </form>
     </div>
   );

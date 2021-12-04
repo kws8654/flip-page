@@ -1,5 +1,6 @@
 .frame {
-  height: 100vh;
+  height: 100%;
+  width: 60%;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -10,7 +11,6 @@
 .title {
   font-size: 9vw;
   font-weight: bold;
-  margin-bottom: 30px;
   margin-right: 1vh;
   text-decoration: underline;
   cursor: pointer;
@@ -23,15 +23,10 @@
 
 @media (max-width: 1023px) {
   .frame {
-    perspective: 800px;
     height: 50%;
     width: 100%;
   }
   .title {
     font-size: 12vw;
-    font-weight: bold;
-    margin-bottom: 30px;
-    margin-right: 1vh;
-    text-decoration: underline;
   }
 }

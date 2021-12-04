@@ -51,7 +51,10 @@
   height: 20vw;
   font-size: 18vw;
 }
-
+.weatherEditInfo {
+  font-size: 3vw;
+  margin-bottom: 1vw;
+}
 .weatherCon {
   display: flex;
   width: 100%;
@@ -79,6 +82,12 @@
   color: orange;
 }
 
+.locationTooLongContent {
+  font-size: 11vw;
+  line-height: 11vw;
+  color: orange;
+}
+
 .location:hover {
   color: skyblue;
 }
@@ -94,13 +103,8 @@
 
 @media (max-width: 1023px) {
   .Container {
-    perspective: 800px;
-    /* display: flex;
-    flex-wrap: wrap; */
     height: 50%;
     width: 100%;
-    color: white;
-    text-align: left;
   }
   .weather {
     font-size: 10vw;

@@ -40,6 +40,8 @@ const LeftPage = () => {
                   className={
                     weather.name.length < 6
                       ? styles.locationContent
+                      : weather.name.length > 10
+                      ? styles.locationTooLongContent
                       : styles.locationLongContent
                   }
                 >
@@ -49,11 +51,8 @@ const LeftPage = () => {
               <div className={styles.weather}>
                 <span>{weather.sys.country} </span>
                 <span
-                  className={
-                    weather.main.temp > 16
-                      ? 'styles.warmTemp'
-                      : 'styles.coldTemp'
-                  }
+                  className={styles.temp}
+                  style={{ color: weather.main.temp > 16 ? 'yellow' : 'blue' }}
                 >
                   {Math.round(weather.main.temp)} ℃
                 </span>
@@ -66,7 +65,9 @@ const LeftPage = () => {
         )}
         <div className={styles.weatherEdit}>
           <div className={styles.weatherEditContent}>
-            Type the country you want to search
+            <div className={styles.weatherEditInfo}>
+              Type the country you want to search in english
+            </div>
             <input
               type='text'
               className='searchBar'
