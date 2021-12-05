@@ -6,7 +6,7 @@
 }
 
 .title {
-  font-size: 3vh;
+  font-size: 1.7vw;
   overflow: hidden;
 }
 
@@ -16,26 +16,28 @@
   border: 0;
   outline: 0;
 }
+
 .doneButton:hover,
 .delButton:hover {
   transform: scale(1.1);
 }
 
 .doneButton > img {
-  width: 3vh;
+  width: 1.5vw;
 }
+
 .delButton > img {
-  width: 2.7vh;
+  width: 1.3vw;
 }
 
 @media (max-width: 1023px) {
   .title {
-    font-size: 2.5vh;
+    font-size: 2.5vw;
   }
   .doneButton > img {
-    width: 2.5vh;
+    width: 2vw;
   }
   .delButton > img {
-    width: 2.2vh;
+    width: 1.8vw;
   }
 }

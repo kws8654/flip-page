@@ -4,12 +4,14 @@
   flex-direction: column;
   align-content: right;
   margin-right: 1vh;
+  margin-top: 2vw;
+  /* border: 1px solid black; */
 }
 
 .frame > form > input {
   border: hidden;
   text-align: right;
-  font-size: 2vh;
-  height: 2.5vh;
-  width: 21vh;
+  font-size: 1.5vw;
+  height: 1.6vw;
+  width: 16vw;
 }

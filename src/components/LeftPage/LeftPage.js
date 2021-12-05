@@ -9,7 +9,6 @@ const API = {
 const LeftPage = () => {
   const [query, setQuery] = useState('');
   const [weather, setWeather] = useState({});
-  const [isClicked, setIsClicked] = useState(false);
 
   useEffect(() => {
     fetch(`${API.base}weather?q=seoul&units=metric&APPID=${API.key}`)
@@ -18,14 +17,24 @@ const LeftPage = () => {
   }, []);
 
   const search = async (e) => {
-    if (e.key === 'Enter') {
-      const response = await fetch(
-        `${API.base}weather?q=${query}&units=metric&APPID=${API.key}`
-      );
-      const result = await response.json();
-      setWeather(result);
+    try {
+      if (e.key === 'Enter') {
+        const response = await fetch(
+          `${API.base}weather?q=${query}&units=metric&APPID=${API.key}`
+        );
+        if (!response.ok) {
+          throw Error('Error occured');
+        }
+        const result = await response.json();
+        setWeather(result);
+        setQuery('');
+        alert(`${query} 설정 완료!`);
+      }
+    } catch {
       setQuery('');
-      alert(`${query}로 설정 완료!`);
+      alert(
+        `${query}은(는) 찾을 수 없는 지역입니다. 정확한 지명을 입력해주세요! `
+      );
     }
   };
 
@@ -66,7 +75,7 @@ const LeftPage = () => {
         <div className={styles.weatherEdit}>
           <div className={styles.weatherEditContent}>
             <div className={styles.weatherEditInfo}>
-              Type the country you want to search in english
+              Type the country in english you want to search
             </div>
             <input
               type='text'

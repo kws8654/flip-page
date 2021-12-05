@@ -16,10 +16,10 @@
   cursor: pointer;
 }
 
-.titleHover:hover {
-  /* transform: translateY(-10px); */
+/* .titleHover:hover {
+  transform: translateY(-10px);
   transform: scale(1.05);
-}
+} */
 
 @media (max-width: 1023px) {
   .frame {
