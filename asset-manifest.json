@@ -1,20 +1,20 @@
 {
   "files": {
-    "main.css": "/flip-page/static/css/main.28afae9f.chunk.css",
-    "main.js": "/flip-page/static/js/main.63168064.chunk.js",
-    "main.js.map": "/flip-page/static/js/main.63168064.chunk.js.map",
+    "main.css": "/flip-page/static/css/main.1c743290.chunk.css",
+    "main.js": "/flip-page/static/js/main.bf73eca0.chunk.js",
+    "main.js.map": "/flip-page/static/js/main.bf73eca0.chunk.js.map",
     "runtime-main.js": "/flip-page/static/js/runtime-main.9225cde8.js",
     "runtime-main.js.map": "/flip-page/static/js/runtime-main.9225cde8.js.map",
     "static/js/2.b46bd6bf.chunk.js": "/flip-page/static/js/2.b46bd6bf.chunk.js",
     "static/js/2.b46bd6bf.chunk.js.map": "/flip-page/static/js/2.b46bd6bf.chunk.js.map",
     "index.html": "/flip-page/index.html",
-    "static/css/main.28afae9f.chunk.css.map": "/flip-page/static/css/main.28afae9f.chunk.css.map",
+    "static/css/main.1c743290.chunk.css.map": "/flip-page/static/css/main.1c743290.chunk.css.map",
     "static/js/2.b46bd6bf.chunk.js.LICENSE.txt": "/flip-page/static/js/2.b46bd6bf.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.9225cde8.js",
     "static/js/2.b46bd6bf.chunk.js",
-    "static/css/main.28afae9f.chunk.css",
-    "static/js/main.63168064.chunk.js"
+    "static/css/main.1c743290.chunk.css",
+    "static/js/main.bf73eca0.chunk.js"
   ]
 }
