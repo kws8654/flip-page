@@ -1,70 +1,55 @@
-# Getting Started with Create React App
+# Flip Page
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+<img width="100%" src="https://user-images.githubusercontent.com/91405218/146669798-0e47b7ab-c366-478c-853d-e38671612212.gif"/>
 
-## Available Scripts
+### [LIVE LINK](https://kws8654.github.io/flip-page/)
 
-In the project directory, you can run:
 
-### `yarn start`
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+## 1. Title
 
-### `yarn test`
+    - Flip Page
+    
+## 2. Summary
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+    - 날씨정보와 시각, To do list 기능으로 시작 페이지로 활용할 수 있는 반응형 웹 어플리케이션입니다. Open Weather API에서 날씨정보를 가져오며 카드 뒷면에서 원하는 도시, 지역, 국가를 설정할 수 있습니다. 
 
-### `yarn build`
+## 2-1. Built with 
+    - React.js
+    - Open Weather API
+    
+ ## 2-2. Supported Enviroments 
+    - Windows, MacOS, Linux
+    - Chrome, Safari, Firefox, Microsoft Edge, Whale
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## 3. Getting Started
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+* Npm
+  ```sh
+  npm install npm@latest -g
+  ```
+  
+* Clone the repo
+   ```sh
+   git clone https://github.com/kws8654/flip-page.git
+   ```
+* Install NPM packages
+   ```sh
+   npm install
+   ```
+   
+## 4. Usage Example
+* 날씨
+  * 지역 설정
+* To do List
+  * 추가/삭제/상태변경 
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+   
+## 5. Contact
 
-### `yarn eject`
+Wonsub Kim - raykim.dev@gmail.com
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+Project Link - [https://github.com/kws8654/flip-apge/](https://github.com/kws8654/flip-page/)
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `yarn build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
