@@ -4,14 +4,14 @@ import styles from './ToDoList.module.css';
 
 const ToDolist = () => {
   const [toDos, setToDos] = useState([
-    { id: 1, title: '리액트 공부하기', done: false },
-    { id: 2, title: '"Wealthinking" 읽기', done: false },
-    { id: 3, title: '헬스장', done: true },
-    { id: 4, title: '둥이 목욕', done: false },
-    // { id: 5, title: '닭가슴살 구입', done: false },
+    { id: 1, title: '리액트 공부하기', done: false, editing: false },
+    { id: 2, title: '"NFT revolution" 읽기', done: false, editing: false },
+    { id: 3, title: '헬스장', done: true, editing: false },
+    { id: 4, title: '둥이 목욕', done: false, editing: false },
   ]);
 
   const inputRef = useRef();
+  const newInputRef = useRef();
 
   const addToDo = (e) => {
     e.preventDefault();
@@ -27,14 +27,22 @@ const ToDolist = () => {
     inputRef.current.value = '';
   };
 
-  const deleteToDo = (todo) => {
+  const modifiedToDo = (todo) => {
     const index = toDos.indexOf(todo);
-    console.log(index);
-    setToDos(
-      toDos.filter((toDo) => {
-        return toDo !== todo;
-      })
-    );
+    const newToDos = [...toDos];
+    if (newToDos[index].editing === false) {
+      newToDos[index].editing = true;
+      if (newInputRef === '') {
+        newToDos[index].title = newInputRef.current.value;
+      }
+    } else {
+      if (newInputRef === '') {
+        newToDos[index].title = newInputRef.current.value;
+      }
+      newToDos[index].editing = false;
+    }
+    console.log(newToDos[index].editing);
+    setToDos(newToDos);
   };
 
   const doneToDo = (todo) => {
@@ -49,6 +57,16 @@ const ToDolist = () => {
     setToDos(newToDos);
   };
 
+  const deleteToDo = (todo) => {
+    const index = toDos.indexOf(todo);
+    console.log(index);
+    setToDos(
+      toDos.filter((toDo) => {
+        return toDo !== todo;
+      })
+    );
+  };
+
   return (
     <div className={styles.frame}>
       <div>
@@ -58,8 +76,11 @@ const ToDolist = () => {
             todo={todo}
             title={todo.title}
             done={todo.done}
+            editing={todo.editing}
+            modifiedToDo={modifiedToDo}
             deleteToDo={deleteToDo}
             doneToDo={doneToDo}
+            ref={newInputRef}
           />
         ))}
       </div>

@@ -1,6 +1,4 @@
 import React, { useState, useEffect } from 'react';
-import { withRouter } from 'react-router';
-import Modal from '../UI/Modal';
 import styles from './LeftPage.module.css';
 
 const API = {

@@ -6,7 +6,7 @@ const RightPage = () => {
   return (
     <div className={styles.frame}>
       <div className={styles.title}>
-        <div className={styles.titleHover}>TO DO LIST </div>
+        <div className={styles.titleToDo}>TO DO LIST </div>
         <Clock />
       </div>
       <div>
