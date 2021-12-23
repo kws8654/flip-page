@@ -40,7 +40,6 @@
 
 ### [LIVE LINK](https://kws8654.github.io/flip-page/)
 
-
 * 날씨
   * 지역 설정
 * To do List
